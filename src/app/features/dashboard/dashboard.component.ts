@@ -32,4 +32,9 @@ export class DashboardComponent implements OnInit {
     this.closeProductModal();
   }
 
+  logout() {
+    this.api.clearCart();
+    this.authService.logout();
+  }
+
 }

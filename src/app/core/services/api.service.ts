@@ -11,10 +11,11 @@ export class ApiService {
 
   public products = signal<any[]>([]);
   public cart = signal<any[]>([]);
-  public customerSummary = signal({
-    name: 'Clyde Barretto',
+  public customerSummary = signal<{ name: string; tier: string; totalSpent: number; state_resident: string }>({
+    name: 'John Doe',
     tier: 'Platinum Enterprise Architect',
-    totalSpent: 100000.00
+    totalSpent: 100000.00,
+    state_resident: 'VA'
   });
 
   async fetchProducts() {

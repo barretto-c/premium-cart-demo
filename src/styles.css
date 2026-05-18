@@ -2,4 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* You can add global styles to this file, and also import other style files */
+body {
+  @apply bg-zinc-950 text-white font-sans antialiased;
+}

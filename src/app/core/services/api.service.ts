@@ -19,7 +19,8 @@ export class ApiService {
 
   async fetchProducts() {
     try {
-      const data = await firstValueFrom(this.http.get<any[]>(`${this.apiUrl}/products?limit=3`));
+    //curl -X GET "https://fakestoreapi.com/products?limit=4" -H "accept: application/json"
+      const data = await firstValueFrom(this.http.get<any[]>(`${this.apiUrl}/products?limit=4`));
       this.products.set(data);
     } catch (error) {
       console.error('API Error:', error);
@@ -29,4 +30,8 @@ export class ApiService {
   addToCart(product: any) {
     this.cart.update(items => [...items, product]);
   }
+
+  clearCart() {
+    this.cart.set([]);
+    }
 }

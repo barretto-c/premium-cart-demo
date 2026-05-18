@@ -30,7 +30,7 @@
         @for (item of api.products(); track item.id) {
           <div class="bg-zinc-900 border border-zinc-800/50 p-6 rounded-2xl flex flex-col justify-between">
             <div>
-              <h5 class="font-bold text-white text-sm line-clamp-1">{{ item.title }}</h5>
+              <h5 class="font-bold text-white text-sm line-clamp-1 cursor-pointer hover:text-blue-400" (click)="goToProduct(item.id)">{{ item.title }}</h5>
               <p class="text-xs text-zinc-400 mt-1 line-clamp-2">{{ item.description }}</p>
             </div>
             <div class="mt-4 flex items-center justify-between">
